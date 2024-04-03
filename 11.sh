@@ -1,24 +1,19 @@
-#!/bin/bash
+echo "Enter Elements"
+read element
 
-echo "Enter the numbers separated by spaces:"
-read arr()
-
-echo "Enter the key element:"
+echo "Enter Key"
 read key
 
 flag=0
-index=-1
 
-for i in "${arr[@]}"; do
-    ((index++))
-    if [[ $i -eq $key ]]; then
+for i in $element; do
+    if [ $i = $key ]
+    then
+        echo "Element Found"
         flag=1
-        break
     fi
-done
-
-if [[ $flag -eq 1 ]]; then
-    echo "Key element $key found at index $index"
-else
-    echo "Key element $key not found"
+    done
+if [ $flag = 0 ]
+then    
+    echo "Element Not Found"
 fi
